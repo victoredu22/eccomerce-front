@@ -1,0 +1,24 @@
+/* ProductDetail.css */
+.detail_shiping {
+  padding: 10px 20px 20px 20px;
+}
+
+@media (min-width: 768px) {
+  .detail_shiping {
+    padding: 0px 40px 20px 0px;
+  }
+}
+.detail_image{
+  width: 100px !important
+}
+.detail__shipping_container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}
+.detail__shipping_text {
+  padding: 5px;
+  font-size: 17px;
+  font-weight: 300;
+}

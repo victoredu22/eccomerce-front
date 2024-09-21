@@ -1,0 +1,40 @@
+.container {
+  margin-top: 80px;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color:#005BD2;
+}
+.left, .right {
+  position: absolute;
+  width: calc(50% + 100px);
+  height: 300px;
+  transform: skew(-20deg, 0deg);
+  overflow: hidden;
+}
+.left img, .right img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: skew(20deg, 0deg);
+}
+.content {
+  position: absolute;
+  top: 35%;
+  left: calc(50% + 50px);
+  background-color: yellow;
+  transform: skew(20deg, 0deg) translate(-50%, -50%);
+  z-index: 1;
+}
+.right .content {
+  left: 50%;
+  right: 50px;
+}
+.left, .right img {
+  left: -100px;
+}
+.right, .left img {
+  right: -100px;
+}

@@ -1,0 +1,15 @@
+.point {
+  font-size: var(--point-size) !important; /* Puedes definir este valor en root si lo deseas */
+  font-weight: var(--point-font) !important; /* Igualmente, lo puedes definir en root */
+  color: var(--primary) !important;
+}
+
+.title{
+  font-size: 25px !important;
+  font-weight: 400 !important;
+}
+
+
+
+
+

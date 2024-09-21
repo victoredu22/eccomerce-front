@@ -1,0 +1,127 @@
+:root{  
+  --primary: #0076DF;
+  --point-size: 1.25rem;
+  --point-font: 700;
+}
+
+
+.app_wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  background-color: #fcfdfd;
+}
+.container-carousel{
+  width:10% !important;
+}
+.main_container {
+
+  flex: 1 0 auto;
+
+}
+h5{
+  font-size: 1.25rem; 
+  font-weight: bold;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  margin: 0px;
+}
+
+
+
+
+
+
+
+
+.main_container{
+  padding:  0px !important; 
+} 
+
+
+.horizontal_scroll_container {
+  display: flex;
+
+}
+
+
+
+
+@media only screen and (max-width: 680px) {
+  .main_container {
+    padding: 20px;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  .horizontal_scroll_container {
+    display: flex;
+    overflow-x: auto; /* Activa el scroll horizontal */
+    white-space: nowrap; /* Evita que los elementos se rompan en varias líneas */
+  }
+  
+  /* Opcional: Personalización del scrollbar para Webkit (Chrome, Safari) */
+  .horizontal_scroll_container::-webkit-scrollbar {
+    height: 8px; /* Tamaño del scrollbar */
+  }
+  
+  .horizontal_scroll_container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del scrollbar */
+    border-radius: 10px; /* Bordes redondeados del scrollbar */
+  }
+  
+  /* Opcional: Personalización del scrollbar para Firefox */
+  .horizontal_scroll_container {
+    scrollbar-width: thin; /* Tamaño del scrollbar en Firefox */
+    scrollbar-color: #888 #f1f1f1; /* Color del scrollbar y del fondo */
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 680px) and (max-width: 767px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .horizontal_scroll_container {
+    display: flex;
+    overflow-x: auto; /* Activa el scroll horizontal */
+    white-space: nowrap; /* Evita que los elementos se rompan en varias líneas */
+  }
+  
+  /* Opcional: Personalización del scrollbar para Webkit (Chrome, Safari) */
+  .horizontal_scroll_container::-webkit-scrollbar {
+    height: 8px; /* Tamaño del scrollbar */
+  }
+  
+  .horizontal_scroll_container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del scrollbar */
+    border-radius: 10px; /* Bordes redondeados del scrollbar */
+  }
+  
+  /* Opcional: Personalización del scrollbar para Firefox */
+  .horizontal_scroll_container {
+    scrollbar-width: thin; /* Tamaño del scrollbar en Firefox */
+    scrollbar-color: #888 #f1f1f1; /* Color del scrollbar y del fondo */
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1300px) {
+  .main_container{
+    padding:  0px !important; 
+  } 
+
+  .horizontal_scroll_container {
+    display: flex;
+    overflow-x: auto; /* Activa el scroll horizontal */
+  }
+}

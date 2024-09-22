@@ -76,6 +76,7 @@ const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
               image={product.srcImage}
               sx={{ padding: { xs: "0px", md: "1em 1em 0 1em" } }}
             />
+            <Typography>{inCart}</Typography>
           </Box>
 
           <Box sx={{ display: { xs: "block", md: "flex" }, padding: "20px" }}>

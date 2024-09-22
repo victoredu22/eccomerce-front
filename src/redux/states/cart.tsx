@@ -20,34 +20,36 @@ export const cartSlice = createSlice({
   reducers: {
     addCart: (state, action) => {
       const productStore = current(state).find(
-        (product) => product.id === action.payload.product.id
+        (product) => product._id === action.payload.product._id
       );
 
       return productStore === undefined
         ? [...current(state), { ...action.payload.product, inCart: 1 }]
         : current(state).map((product) =>
-            product.id === action.payload.product.id
+            product._id === action.payload.product._id
               ? { ...product, inCart: product.inCart + 1 }
               : { ...product, inCart: 1 }
           );
     },
-    updateStock: (state, action) => {
-      return action.payload.type === "add"
-        ? current(state).map((product) =>
-            product.id === action.payload.id
-              ? { ...product, inCart: product.inCart + 1 }
-              : { ...product }
-          )
-        : current(state).map((product) =>
-            product.id === action.payload.id
-              ? { ...product, inCart: product.inCart - 1 }
-              : { ...product }
-          );
+    addToCart: (state, action) => {
+      return state.map((product) =>
+        product._id === action.payload._id
+          ? { ...action.payload, inCart: action.payload.inCart + 1 }
+          : product
+      );
+    },
+    removeFromCart: (state, action) => {
+      return state.map((product) =>
+        product._id === action.payload._id
+          ? { ...action.payload, inCart: Math.max(product.inCart - 1, 0) }
+          : product
+      );
     },
     deleteCart: (state, action) => {
       return current(state).filter((item) => item.id != action.payload);
     },
   },
 });
-export const { addCart, updateStock, deleteCart } = cartSlice.actions;
+export const { addCart, addToCart, removeFromCart, deleteCart } =
+  cartSlice.actions;
 export default cartSlice.reducer;

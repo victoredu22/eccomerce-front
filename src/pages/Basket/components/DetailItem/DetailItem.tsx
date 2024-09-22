@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Box, Button, CardMedia, Typography } from "@mui/material";
@@ -8,9 +8,9 @@ import MinimizeIcon from "@mui/icons-material/Minimize";
 import AddIcon from "@mui/icons-material/Add";
 import { Product } from "../../../../interface/product";
 import { AppStore } from "../../../../redux/store";
-import { deleteCart, updateStock } from "../../../../redux/states/cart";
+import { addToCart, removeFromCart } from "../../../../redux/states/cart";
 
-import { getLocalStorage, setLocalStorage } from "../../../../utilities";
+import { setLocalStorage } from "../../../../utilities";
 import { formatNumberWithCommas } from "../../../../utilities/formatNumberWithCommas";
 import { LocalstorageTypes } from "../../../../models/localstorage";
 
@@ -20,35 +20,15 @@ export interface DetailsItemInterface {
 
 const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
   const dispatch = useDispatch();
-  const [inCart, setInCart] = useState<number>(product.inCart);
   const stateCart = useSelector((store: AppStore) => store.cart);
 
+  useEffect(() => {
+    setLocalStorage(LocalstorageTypes.CART, stateCart);
+  }, [stateCart]);
+
   const handleStock = (type: string, product: Product) => {
-    const stockIncart =
-      type === "subtract" ? product.inCart - 1 : product.inCart + 1;
-    setInCart(stockIncart);
-
-    dispatch(updateStock({ type, id: product.id }));
-
-    if (stockIncart > 0) {
-      const dataLocal = stateCart.map((item: Product) =>
-        item.id === product.id ? { ...item, inCart: stockIncart } : { ...item }
-      );
-
-      setLocalStorage(LocalstorageTypes.CART, dataLocal);
-      return;
-    }
-
-    const itemsLocal = getLocalStorage(LocalstorageTypes.CART)
-      ? JSON.parse(getLocalStorage(LocalstorageTypes.CART) as "String")
-      : [];
-
-    const dataLocal = itemsLocal.filter(
-      (item: Product) => item.id != product.id
-    );
-
-    setLocalStorage(LocalstorageTypes.CART, dataLocal);
-    dispatch(deleteCart(product.id));
+    if (type === "remove") dispatch(removeFromCart(product));
+    if (type === "add") dispatch(addToCart(product));
   };
 
   return (
@@ -76,7 +56,7 @@ const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
               image={product.srcImage}
               sx={{ padding: { xs: "0px", md: "1em 1em 0 1em" } }}
             />
-            <Typography>{inCart}</Typography>
+            <Typography>{product.inCart}</Typography>
           </Box>
 
           <Box sx={{ display: { xs: "block", md: "flex" }, padding: "20px" }}>
@@ -135,7 +115,7 @@ const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
                   aria-label="button-handle-subtract"
                   variant="text"
                   onClick={() => {
-                    handleStock("subtract", product);
+                    handleStock("remove", product);
                   }}
                 >
                   {" "}

@@ -11,8 +11,8 @@
   min-height: 60vh;
   background-color: #fcfdfd;
 }
-.container-carousel{
-  width:10% !important;
+.carousel_container{
+  width:80vw ;
 }
 .main_container {
 
@@ -40,15 +40,34 @@ body{
 } 
 
 
+
+
+
+
+
+.product_detail{
+  width: 100%;
+  margin-top: 60px;
+  text-align: left;
+}
+
 .horizontal_scroll_container {
   display: flex;
-
+  gap: 20px;
+  padding: 20px;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-bottom: 5%;
 }
 
 
 
 
 @media only screen and (max-width: 680px) {
+  .product_detail{
+    width: 90%;
+  }
+
   .main_container {
     padding: 20px;
     width: 100%;
@@ -59,6 +78,8 @@ body{
     display: flex;
     overflow-x: auto; /* Activa el scroll horizontal */
     white-space: nowrap; /* Evita que los elementos se rompan en varias líneas */
+    justify-content: flex-start; /* Para pantallas md o más grandes */
+    align-items: center; 
   }
   
   /* Opcional: Personalización del scrollbar para Webkit (Chrome, Safari) */

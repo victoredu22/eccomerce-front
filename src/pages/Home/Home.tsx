@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Box, Grid, CardMedia } from "@mui/material";
+import { Box, Grid, CardMedia, Typography } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "../../styles/Layout.module.css";
@@ -30,49 +30,41 @@ const Home: React.FC<HomeInterface> = () => {
 
   return (
     <Layout>
-      <Grid container className={styles.main_container} justifyContent="center">
-        <Grid
-          item
-          xs={12}
+      <Box className={styles.main_container} justifyContent="center">
+        <Box
           sx={{
             backgroundColor: "#F4F3F1",
             marginTop: "90px",
             height: "auto",
             display: "flex",
-            justifyContent: "flex-start",
+            justifyContent: "center", // Centra el contenido
             alignItems: "center",
             width: "100%",
+            padding: "10px 0", // Espaciado vertical
           }}
         >
-          <Grid
-            container
+          <Box
             sx={{
-              textAlign: "center",
-              display: "flex",
-              justifyContent: "center",
+              display: "flex", // Flexbox para los elementos internos
+              justifyContent: "center", // Centra los elementos
               alignItems: "center",
             }}
           >
-            <Grid item sx={{ padding: "10px" }}>
-              Ofertas
-            </Grid>
-            <Grid item sx={{ padding: "10px" }}>
-              Celulares
-            </Grid>
-            <Grid item sx={{ padding: "10px" }}>
-              Servicio tecnico
-            </Grid>
-            <Grid item sx={{ padding: "10px" }}>
-              Sigue tu compra
-            </Grid>
-            <Grid item sx={{ padding: "10px" }}>
-              Trade in
-            </Grid>
-          </Grid>
-        </Grid>
-
-        <Grid item xs={12} md={9} textAlign="left">
-          <Box className={styles.carousel}>
+            <Typography sx={{ padding: "10px" }}>Ofertas</Typography>
+            <Typography sx={{ padding: "10px" }}>Celulares</Typography>
+            <Typography sx={{ padding: "10px" }}>Servicio técnico</Typography>
+            <Typography sx={{ padding: "10px" }}>Sigue tu compra</Typography>
+            <Typography sx={{ padding: "10px" }}>Trade in</Typography>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignContent: "center",
+          }}
+        >
+          <Box className={styles.carousel_container}>
             <Carousel
               showArrows={false}
               autoPlay={true}
@@ -101,62 +93,56 @@ const Home: React.FC<HomeInterface> = () => {
               />
             </Carousel>
           </Box>
-        </Grid>
+        </Box>
 
-        <Grid item xs={10} md={9} textAlign="left" sx={{ marginTop: "60px" }}>
-          <Box sx={{ marginTop: { xs: "60px", md: "0px" } }}>
+        <Box className={styles.product_detail}>
+          <Box
+            sx={{
+              marginTop: { xs: "60px", md: "0px" },
+              marginLeft: { xs: "5%", md: "10%" },
+            }}
+          >
             <Title contentTitle="Ofertas de hoy" />
           </Box>
-          <Grid>
-            <Box
-              className={styles.horizontal_scroll_container}
-              marginTop={1}
-              sx={{
-                justifyContent: { xs: "left", md: "center" },
-                alignItems: { xs: "left", md: "center" },
-              }}
-            >
-              {stateProduct != undefined &&
-                stateProduct.map((product, key) => (
-                  <ProductDetail
-                    key={key}
-                    type="discountList"
-                    product={product}
-                  />
-                ))}
-            </Box>
-          </Grid>
-        </Grid>
 
-        <Grid item xs={10} md={9} textAlign="left" sx={{ marginTop: "60px" }}>
-          <Box sx={{ marginTop: { xs: "60px", md: "0px" } }}>
+          <Box className={styles.horizontal_scroll_container}>
+            {stateProduct !== undefined &&
+              stateProduct.map((product, key) => (
+                <ProductDetail
+                  key={key}
+                  type="discountList"
+                  product={product}
+                />
+              ))}
+          </Box>
+        </Box>
+
+        <Box className={styles.product_detail}>
+          <Box
+            sx={{
+              marginTop: { xs: "60px", md: "0px" },
+              marginLeft: { xs: "5%", md: "10%" },
+            }}
+          >
             <Title contentTitle="Mejores precios" />
           </Box>
-          <Grid>
-            <Box
-              className={styles.horizontal_scroll_container}
-              marginTop={1}
-              sx={{
-                justifyContent: { xs: "left", md: "center" },
-                alignItems: { xs: "left", md: "center" },
-              }}
-            >
-              {stateProduct != undefined &&
-                stateProduct.map((product, key) => (
-                  <ProductDetail
-                    key={key}
-                    type="discountList"
-                    product={product}
-                  />
-                ))}
-            </Box>
-          </Grid>
-        </Grid>
+
+          <Box className={styles.horizontal_scroll_container}>
+            {stateProduct !== undefined &&
+              stateProduct.map((product, key) => (
+                <ProductDetail
+                  key={key}
+                  type="discountList"
+                  product={product}
+                />
+              ))}
+          </Box>
+        </Box>
 
         <TradeInBanner />
         <BrandBanner />
         <ReleaseCalendar />
-      </Grid>
+      </Box>
     </Layout>
   );
 };

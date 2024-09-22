@@ -1,0 +1,24 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px dotted #92979f;
+  padding: 100px;
+}
+
+.footer_section {
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 680px) {
+  .footer {
+    flex-direction: column; /* Apila los elementos uno debajo del otro en mobile */
+    justify-content: space-between;
+    border-top: 1px dotted #92979f;
+  }
+
+  .footer_section {
+    text-align: center;
+    padding: 10px 0; /* Ajusta el padding en pantallas grandes */
+  }
+}

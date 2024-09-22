@@ -10,7 +10,12 @@ export const BrandBanner = () => {
 
   return (
     <Grid item xs={9} textAlign="left" sx={{ marginTop: "120px" }}>
-      <Box sx={{ marginTop: { xs: "60px", md: "0px" } }}>
+      <Box
+        sx={{
+          marginTop: { xs: "60px", md: "0px" },
+          marginLeft: { xs: "5%", md: "10%" },
+        }}
+      >
         <Title contentTitle="Nuestras Marcas" />
       </Box>
 

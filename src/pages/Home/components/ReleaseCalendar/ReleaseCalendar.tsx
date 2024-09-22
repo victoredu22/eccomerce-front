@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Title } from "../../../../components/Title/Title";
 import styles from "../../../../styles/Layout.module.css";
 import { useEffect, useState } from "react";
@@ -14,22 +14,17 @@ export const ReleaseCalendar = () => {
   }, []);
 
   return (
-    <Grid item xs={9} md={9} textAlign="left" sx={{ marginTop: "60px" }}>
-      <Box sx={{ marginTop: { xs: "60px", md: "0px" } }}>
+    <Box textAlign="left" sx={{ marginTop: "60px" }}>
+      <Box
+        sx={{
+          marginTop: { xs: "60px", md: "0px" },
+          marginLeft: { xs: "5%", md: "10%" },
+        }}
+      >
         <Title contentTitle="Próximos Lanzamientos" />
       </Box>
 
-      <Box
-        sx={{
-          display: "flex",
-          gap: "20px",
-          padding: "20px",
-          justifyContent: { xs: "left", md: "center" },
-          alignItems: { xs: "left", md: "center" },
-          marginBottom: "5%",
-        }}
-        className={styles.horizontal_scroll_container}
-      >
+      <Box className={styles.horizontal_scroll_container}>
         {launchs &&
           launchs.map((launch: any, key: any) => (
             <Box
@@ -48,7 +43,8 @@ export const ReleaseCalendar = () => {
                   padding: "20px 30px 20px 30px",
                 }}
               >
-                <Typography>{launch.dateLaunch}</Typography>
+                <Typography>24 septiembre</Typography>
+                <Typography>{key}</Typography>
               </Box>
 
               <Box
@@ -72,6 +68,6 @@ export const ReleaseCalendar = () => {
             </Box>
           ))}
       </Box>
-    </Grid>
+    </Box>
   );
 };

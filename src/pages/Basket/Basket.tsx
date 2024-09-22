@@ -1,13 +1,15 @@
 import React from "react";
-import { Layout } from "@/components/Layout";
+
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { AppStore } from "@/redux/store";
-import { DetailItem } from "./components/DetailItem";
-import { Review } from "./components/Review";
+
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import AddIcon from "@mui/icons-material/Add";
+import { AppStore } from "../../redux/store";
+import { Layout } from "../../components/Layout";
+import DetailsItem from "./components/DetailItem/DetailItem";
+import Review from "./components/Review/Review";
 export interface BasketInterface {}
 
 const Basket: React.FC<BasketInterface> = () => {
@@ -95,7 +97,7 @@ const Basket: React.FC<BasketInterface> = () => {
             </Box>
             {stateCart != undefined &&
               stateCart.map((item, key) => (
-                <DetailItem product={item} key={key} />
+                <DetailsItem product={item} key={key} />
               ))}
           </Box>
 

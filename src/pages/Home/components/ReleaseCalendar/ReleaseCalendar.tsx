@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { Title } from "../../../../components/Title/Title";
 import styles from "../../../../styles/Layout.module.css";
 import { useEffect, useState } from "react";
-import { getUrl } from "@/services/getUrl";
+import { getUrl } from "../../../../services/getUrl";
 
 export const ReleaseCalendar = () => {
   const [launchs, setLaunchs] = useState<any>();

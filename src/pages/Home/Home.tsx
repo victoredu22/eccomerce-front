@@ -1,21 +1,20 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { AppStore } from "@/redux/store";
-import { updateStockBrand } from "@/redux/states/brand";
+
 import { Box, Grid, CardMedia } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-import { Layout } from "@/components/Layout";
-
 import styles from "../../styles/Layout.module.css";
 import { Title } from "../../components/Title/Title";
 import { BrandBanner } from "./components/BrandBanner/BrandBanner";
 import { TradeInBanner } from "./components/TradeInBanner/TradeInBanner";
 import { ReleaseCalendar } from "./components/ReleaseCalendar/ReleaseCalendar";
-import { setProducts } from "@/redux/states/products";
+
 import ProductDetail from "./components/ProductDetail/ProductDetail";
-import { getUrl } from "@/services/getUrl";
+import { AppStore } from "../../redux/store";
+import { getUrl } from "../../services/getUrl";
+import { setProducts } from "../../redux/states/products";
+import { Layout } from "../../components/Layout";
 
 export interface HomeInterface {}
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, CardMedia, Typography } from "@mui/material";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import { ButtonShopping } from "@/components/ButtonShopping";
-import { Product } from "@/interface/product";
-import { formatNumberWithCommas } from "@/utilities/formatNumberWithCommas";
 import styles from "./ProductDetail.module.css";
+import { Product } from "../../../../interface/product";
+import { formatNumberWithCommas } from "../../../../utilities/formatNumberWithCommas";
+import ButtonShopping from "../../../../components/ButtonShopping/ButtonShopping";
 
 export interface OfferDayInterface {
   type: string;

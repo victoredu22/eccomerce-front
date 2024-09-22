@@ -1,6 +1,5 @@
-import { apiUrl } from "@/config/env";
-import { Product } from "@/interface/product";
-import React from "react";
+import { apiUrl } from "../config/env";
+import { Product } from "../interface/product";
 
 export const getUrl = async (params: string) => {
   const url = new URL(`${apiUrl}${params}`);

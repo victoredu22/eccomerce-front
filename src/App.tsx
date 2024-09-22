@@ -2,9 +2,10 @@ import { Home } from "./pages";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Basket } from "./pages/Basket";
+
 import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import Basket from "./pages/Basket/Basket";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (

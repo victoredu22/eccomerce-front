@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Typography } from "@mui/material";
-import { Product } from "@/interface/product";
+import { Box, Typography } from "@mui/material";
+
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import HomeIcon from "@mui/icons-material/Home";
 import DiscountIcon from "@mui/icons-material/Discount";
-import { formatNumberWithCommas } from "@/utilities/formatNumberWithCommas";
+import { Product } from "../../../../interface/product";
+import { formatNumberWithCommas } from "../../../../utilities/formatNumberWithCommas";
 
 export interface ReviewInterface {
   cart: Product[];

@@ -1,13 +1,11 @@
-import { Product } from "@/interface/product";
-import { ProductList } from "../../models/productList";
-import { createSlice, current } from "@reduxjs/toolkit";
-import React from "react";
+import { createSlice } from "@reduxjs/toolkit";
+import { Product } from "../../interface/product";
 
 const initialState: Product[] = [];
 
 export const productSlice = createSlice({
   name: "products",
-  initialState: [],
+  initialState,
   reducers: {
     setProducts: (state, action) => {
       return action.payload;

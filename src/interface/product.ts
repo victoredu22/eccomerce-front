@@ -1,4 +1,5 @@
 export interface Product {
+  id: number;
   active: boolean;
   brand: number;
   characteristics: string;
@@ -6,6 +7,7 @@ export interface Product {
   price: number;
   shippingFree: boolean;
   srcImage: string;
-  stock: 99;
+  stock: number;
   title: string;
+  inCart: number;
 }

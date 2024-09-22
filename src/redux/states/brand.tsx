@@ -1,7 +1,6 @@
-import { Product } from "@/interface/product";
 import { createSlice, current } from "@reduxjs/toolkit";
-import logo from "../../../public/assets/images/Xiaomi-Logo.svg";
-import { Brand } from "@/interface/brand";
+import { Brand } from "../../interface/brand";
+import { Product } from "../../interface/product";
 
 const initialState: Brand[] = [
   {

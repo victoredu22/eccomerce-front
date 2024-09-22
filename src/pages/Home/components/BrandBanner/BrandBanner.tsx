@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import { Title } from "../../../../components/Title/Title";
 import { Box, Grid } from "@mui/material";
-import { AppStore } from "@/redux/store";
-import { Brand } from "@/interface/brand";
+
+import { AppStore } from "../../../../redux/store";
+import { Brand } from "../../../../interface/brand";
 
 export const BrandBanner = () => {
   const brandsBanner: Brand[] = useSelector((store: AppStore) => store.brand);

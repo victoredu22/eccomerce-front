@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Product } from "@/interface/product";
 import { useDispatch, useSelector } from "react-redux";
-import { addCart } from "@/redux/states/cart";
-import { AppStore } from "@/redux/store";
-import { setLocalStorage } from "@/utilities";
-import { LocalstorageTypes } from "@/models";
+import { Product } from "../../interface/product";
+import { AppStore } from "../../redux/store";
+import { LocalstorageTypes } from "../../models/localstorage";
+import { setLocalStorage } from "../../utilities";
+import { addCart } from "../../redux/states/cart";
 
 export interface ButtonShoppingInterface {
   product: Product;

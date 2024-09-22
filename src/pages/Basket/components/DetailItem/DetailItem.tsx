@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { AppStore } from "@/redux/store";
+
 import { Box, Button, CardMedia, Typography } from "@mui/material";
-import { deleteCart, updateStock } from "@/redux/states/cart";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import MinimizeIcon from "@mui/icons-material/Minimize";
 import AddIcon from "@mui/icons-material/Add";
+import { Product } from "../../../../interface/product";
+import { AppStore } from "../../../../redux/store";
+import { deleteCart, updateStock } from "../../../../redux/states/cart";
 
-import { Product } from "@/interface/product";
-import { LocalstorageTypes } from "@/models";
-import { getLocalStorage, setLocalStorage } from "@/utilities";
-import { formatNumberWithCommas } from "@/utilities/formatNumberWithCommas";
+import { getLocalStorage, setLocalStorage } from "../../../../utilities";
+import { formatNumberWithCommas } from "../../../../utilities/formatNumberWithCommas";
+import { LocalstorageTypes } from "../../../../models/localstorage";
+
 export interface DetailsItemInterface {
   product: Product;
 }
@@ -70,8 +72,8 @@ const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
           >
             <CardMedia
               component="img"
-              alt={product.picture.alt}
-              image={product.picture.src}
+              alt={product.srcImage}
+              image={product.srcImage}
               sx={{ padding: { xs: "0px", md: "1em 1em 0 1em" } }}
             />
           </Box>

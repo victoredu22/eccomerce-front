@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { AppStore } from "@/redux/store";
+import { AppStore } from "../../redux/store";
+
 export interface NavbarInterface {}
 
 const Navbar: React.FC<NavbarInterface> = () => {

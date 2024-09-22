@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";

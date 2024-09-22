@@ -11,7 +11,7 @@ export interface OfferDayInterface {
   product: Product;
 }
 
-const ProductDetail: React.FC<OfferDayInterface> = ({ type, product }) => {
+const ProductDetail: React.FC<OfferDayInterface> = ({ product }) => {
   return (
     <>
       <Box className={styles.detail_shiping}>

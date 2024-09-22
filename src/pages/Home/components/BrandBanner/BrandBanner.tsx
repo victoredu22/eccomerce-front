@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Title } from "../../../../components/Title/Title";
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 
 import { AppStore } from "../../../../redux/store";
 import { Brand } from "../../../../interface/brand";
@@ -9,7 +9,12 @@ export const BrandBanner = () => {
   const brandsBanner: Brand[] = useSelector((store: AppStore) => store.brand);
 
   return (
-    <Grid item xs={9} textAlign="left" sx={{ marginTop: "120px" }}>
+    <Box
+      sx={{
+        marginTop: "120px",
+        textAlign: "left",
+      }}
+    >
       <Box
         sx={{
           marginTop: { xs: "60px", md: "0px" },
@@ -19,31 +24,30 @@ export const BrandBanner = () => {
         <Title contentTitle="Nuestras Marcas" />
       </Box>
 
-      <Grid
-        container
+      <Box
+        display="flex"
         justifyContent="center"
         alignItems="center"
-        spacing={6}
-        marginTop={1}
+        flexWrap="wrap" // Permite que los elementos se envuelvan en pantallas más pequeñas
       >
         {brandsBanner &&
           brandsBanner.map((brandBanner, index) => (
-            <Grid item key={index}>
-              <Box
-                bgcolor="#F6F6F8"
-                component="img"
-                src={brandBanner.urlLogo}
-                alt={brandBanner.alt}
-                sx={{
-                  width: 234,
-                  height: 160,
-                  textAlign: "center",
-                  borderRadius: "20px",
-                }}
-              />
-            </Grid>
+            <Box
+              key={index}
+              bgcolor="#F6F6F8"
+              component="img"
+              src={brandBanner.urlLogo}
+              alt={brandBanner.alt}
+              sx={{
+                width: "234px", // Mantén el tamaño deseado
+                height: "160px",
+                textAlign: "center",
+                borderRadius: "20px",
+                margin: "10px", // Añade margen entre las imágenes
+              }}
+            />
           ))}
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 };

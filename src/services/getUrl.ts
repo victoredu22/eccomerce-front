@@ -6,7 +6,7 @@ export const getUrl = async (params: string) => {
 
   return fetch(url)
     .then((res) => res.json() as Promise<{ results: Product[] }>)
-    .then((res) => {
+    .then((res: any) => {
       return res;
     });
 };

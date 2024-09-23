@@ -3,6 +3,7 @@ import { Title } from "../../../../components/Title/Title";
 import styles from "../../../../styles/Layout.module.css";
 import { useEffect, useState } from "react";
 import { getUrl } from "../../../../services/getUrl";
+import { formatDayMonthYear } from "../../../../utilities/formatDate";
 
 export const ReleaseCalendar = () => {
   const [launchs, setLaunchs] = useState<any>();
@@ -43,8 +44,7 @@ export const ReleaseCalendar = () => {
                   padding: "20px 30px 20px 30px",
                 }}
               >
-                <Typography>24 septiembre</Typography>
-                <Typography>{key}</Typography>
+                <Typography>{formatDayMonthYear(launch.dateLaunch)}</Typography>
               </Box>
 
               <Box

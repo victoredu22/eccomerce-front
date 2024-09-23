@@ -52,6 +52,8 @@ const Footer: React.FC<FooterInterface> = () => {
           justifyContent: "space-between",
           paddingLeft: { xs: "10px", md: "80px" },
           paddingRight: { xs: "10px", md: "80px" },
+          backgroundColor: "#1A1919",
+          color: "#FFF8F8",
         }}
       >
         <Box sx={{ textAlign: "left" }}>

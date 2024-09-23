@@ -73,7 +73,7 @@ export const TradeInBanner = () => {
             }}
           >
             {/* Encabezado */}
-            <Box sx={{ display: "flex", bgcolor: "#f2f2f2", width: "100%" }}>
+            <Box sx={{ display: "flex", width: "100%" }}>
               <Box sx={{ flex: 1, textAlign: "left" }}>
                 <Typography sx={{ color: "#9D9D9F", fontSize: "15px" }}>
                   Tu Dispositivo

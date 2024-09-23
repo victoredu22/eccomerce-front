@@ -3,6 +3,8 @@
   justify-content: space-between;
   border-top: 1px dotted #92979f;
   padding: 100px;
+  background-color: #1A1919;
+  color: #FFF8F8;
 }
 
 .footer_section {
@@ -15,6 +17,8 @@
     flex-direction: column; /* Apila los elementos uno debajo del otro en mobile */
     justify-content: space-between;
     border-top: 1px dotted #92979f;
+    background-color: #1A1919;
+    color: #FFF8F8;
   }
 
   .footer_section {

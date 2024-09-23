@@ -29,7 +29,6 @@ const Review: React.FC<ReviewInterface> = ({ cart }) => {
           padding: "40px",
           backgroundColor: "white",
           borderRadius: "15px",
-          width: "70%",
         }}
       >
         <Typography variant="h5" fontWeight="bold">
@@ -77,11 +76,10 @@ const Review: React.FC<ReviewInterface> = ({ cart }) => {
       </Box>
       <Box
         sx={{
-          marginTop: "2%",
+          marginTop: "20px",
           padding: "40px",
           backgroundColor: "white",
           borderRadius: "15px",
-          width: "70%",
         }}
       >
         <Typography variant="h5" fontWeight="bold">

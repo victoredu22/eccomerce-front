@@ -40,13 +40,12 @@ const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
             paddingBottom: "10px",
             backgroundColor: "white",
             alignItems: "right",
-            justifyContent: "right", // Center horizontally
+            justifyContent: "flex-start", // Center horizontally
             width: { xs: "100%", md: "60%" },
           }}
         >
           <Box
             sx={{
-              flex: "0 1 auto",
               padding: "17px",
             }}
           >
@@ -54,99 +53,79 @@ const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
               component="img"
               alt={product.srcImage}
               image={product.srcImage}
-              sx={{ padding: { xs: "0px", md: "1em 1em 0 1em" } }}
+              sx={{ paddingTop: { xs: "0px", md: "20px" } }}
             />
-            <Typography>{product.inCart}</Typography>
           </Box>
 
-          <Box sx={{ display: { xs: "block", md: "flex" }, padding: "20px" }}>
+          <Box sx={{ padding: "20px", width: "50%" }}>
+            <Typography sx={{ padding: "5px", fontSize: "1.25rem" }}>
+              {product.title}
+            </Typography>
+            <Typography sx={{ padding: "5px", fontSize: "1rem" }}>
+              {product.description}
+            </Typography>
+            <Typography sx={{ padding: "5px", fontSize: "1rem" }}>
+              <Typography component="span">
+                {formatNumberWithCommas(product.price)}
+              </Typography>
+            </Typography>
             <Box
               sx={{
-                flex: 2,
-              }}
-            >
-              <Typography sx={{ padding: "5px", fontSize: "1.25rem" }}>
-                {product.title}
-              </Typography>
-              <Typography sx={{ padding: "5px", fontSize: "1rem" }}>
-                {product.description}
-              </Typography>
-              <Typography sx={{ padding: "5px", fontSize: "1rem" }}>
-                <Typography component="span">
-                  {formatNumberWithCommas(product.price)}
-                </Typography>
-              </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                  padding: "5px",
-                }}
-              >
-                <LocalShippingIcon sx={{ marginRight: "5px" }} />
-                <Typography
-                  sx={{
-                    fontSize: "1rem",
-                    textAlign: "2px",
-                  }}
-                >
-                  Envio gratis.
-                </Typography>
-              </Box>
-            </Box>
-            <Box
-              sx={{
-                flex: 2,
                 display: "flex",
-                flexWrap: "wrap",
                 alignItems: "center",
-                marginLeft: { xs: "0px", md: "40px" },
+                flexWrap: "wrap",
+                padding: "5px",
               }}
             >
-              <Box
+              <LocalShippingIcon sx={{ marginRight: "5px" }} />
+              <Typography
                 sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  alignItems: "center",
+                  fontSize: "1rem",
+                  textAlign: "2px",
                 }}
               >
-                <Button
-                  aria-label="button-handle-subtract"
-                  variant="text"
-                  onClick={() => {
-                    handleStock("remove", product);
-                  }}
-                >
-                  {" "}
-                  <MinimizeIcon
-                    sx={{
-                      fontSize: "25px",
-                      marginBottom: "15px",
-                      cursor: "pointer",
-                    }}
-                  />
-                </Button>
-                <Typography sx={{ marginLeft: "10px", marginRight: "10px" }}>
-                  {product.inCart}
-                </Typography>
-                <Button
-                  aria-label="button-handle-add"
-                  variant="text"
-                  onClick={() => {
-                    handleStock("add", product);
-                  }}
-                >
-                  <AddIcon
-                    sx={{
-                      fontSize: "25px",
-                      marginBottom: "0px",
-                      cursor: "pointer",
-                    }}
-                  />
-                </Button>
-              </Box>
+                Envio gratis.
+              </Typography>
             </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+            }}
+          >
+            <Button
+              aria-label="button-handle-subtract"
+              variant="text"
+              onClick={() => {
+                handleStock("remove", product);
+              }}
+            >
+              <MinimizeIcon
+                sx={{
+                  fontSize: "25px",
+                  marginBottom: "15px",
+                  cursor: "pointer",
+                }}
+              />
+            </Button>
+            <Typography>{product.inCart}</Typography>
+            <Button
+              aria-label="button-handle-add"
+              variant="text"
+              onClick={() => {
+                handleStock("add", product);
+              }}
+            >
+              <AddIcon
+                sx={{
+                  fontSize: "25px",
+                  marginBottom: "0px",
+                  cursor: "pointer",
+                }}
+              />
+            </Button>
           </Box>
         </Box>
       )}

@@ -6,6 +6,12 @@ import { Box } from "@mui/material";
 
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
+
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { AppStore } from "../../redux/store";
@@ -28,7 +34,7 @@ const Navbar: React.FC<NavbarInterface> = () => {
           position="fixed"
           style={{
             boxShadow: "unset",
-            background: "#18181B",
+            background: "white",
             padding: "15px",
           }}
         >
@@ -37,18 +43,55 @@ const Navbar: React.FC<NavbarInterface> = () => {
               to={"/"}
               style={{ color: "inherit", textDecoration: "inherit" }}
             >
-              <Typography variant="h6" fontWeight="bold" color="white">
-                Carrito de compras
-                <Typography
-                  component="span"
-                  color="primary"
-                  sx={{ fontSize: "1.25rem", fontWeight: "700" }}
-                >
-                  .
+              <Box
+                sx={{
+                  display: "flex", // Flexbox para los elementos internos
+                  justifyContent: "center", // Centra los elementos
+                  alignItems: "center",
+                }}
+              >
+                <Typography variant="h6" fontWeight="bold" color="black">
+                  Carrito de compras
+                  <Typography
+                    component="span"
+                    color="primary"
+                    sx={{ fontSize: "1.25rem", fontWeight: "700" }}
+                  >
+                    .
+                  </Typography>
                 </Typography>
-              </Typography>
+                <Box sx={{ display: "none" }}>
+                  <Typography sx={{ padding: "10px", color: "black" }}>
+                    Ofertas
+                  </Typography>
+                  <Typography sx={{ padding: "10px", color: "black" }}>
+                    Celulares
+                  </Typography>
+                  <Typography sx={{ padding: "10px", color: "black" }}>
+                    Servicio técnico
+                  </Typography>
+                  <Typography sx={{ padding: "10px", color: "black" }}>
+                    Sigue tu compra
+                  </Typography>
+                  <Typography sx={{ padding: "10px", color: "black" }}>
+                    Trade in
+                  </Typography>
+                </Box>
+              </Box>
             </Link>
             <Box sx={{ flexGrow: 1 }} />
+
+            <Box
+              sx={{
+                display: "flex",
+
+                flexWrap: "wrap",
+                marginLeft: "10px",
+                color: "black",
+              }}
+            >
+              <SearchOutlinedIcon sx={{ fontSize: "30px" }} />
+            </Box>
 
             <Link
               to={"/compras"}
@@ -61,37 +104,36 @@ const Navbar: React.FC<NavbarInterface> = () => {
                   alignItems: "center",
                   flexWrap: "wrap",
                   marginLeft: "10px",
-                  color: "#005BD2",
+                  color: "black",
                 }}
               >
-                <ShoppingCartIcon sx={{ fontSize: "20px" }} />
-                <Typography
-                  sx={{
-                    color: "white",
-                    display: { xs: "none", md: "block" },
-                  }}
-                >
-                  Mi carrito
-                </Typography>
-                (<Typography component="span">{cartLength}</Typography>)
+                <ShoppingCartOutlinedIcon sx={{ fontSize: "30px" }} />(
+                <Typography component="span">{cartLength}</Typography>)
               </Box>
             </Link>
 
             <Box
               sx={{
                 display: "flex",
-                alignItems: "center",
+
                 flexWrap: "wrap",
                 marginLeft: "10px",
-                color: "#005BD2",
+                color: "black",
               }}
             >
-              <PersonIcon sx={{ fontSize: "20px" }} />
-              <Typography
-                sx={{ color: "white", display: { xs: "none", md: "block" } }}
-              >
-                Iniciar sesion
-              </Typography>
+              <LocalShippingOutlinedIcon sx={{ fontSize: "30px" }} />
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+
+                flexWrap: "wrap",
+                marginLeft: "10px",
+                color: "black",
+              }}
+            >
+              <AccountCircleOutlinedIcon sx={{ fontSize: "30px" }} />
             </Box>
           </Toolbar>
         </AppBar>

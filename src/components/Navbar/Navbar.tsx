@@ -56,7 +56,7 @@ const Navbar: React.FC<NavbarInterface> = () => {
                     .
                   </Typography>
                 </Typography>
-                <Box sx={{ display: "none" }}>
+                <Box sx={{ display: { xs: "contents", md: "none" } }}>
                   <Typography sx={{ padding: "10px", color: "black" }}>
                     Ofertas
                   </Typography>

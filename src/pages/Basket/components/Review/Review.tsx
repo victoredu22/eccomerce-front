@@ -26,7 +26,7 @@ const Review: React.FC<ReviewInterface> = ({ cart }) => {
     <>
       <Box
         sx={{
-          padding: "40px",
+          padding: { xs: "10px", md: "40px" },
           backgroundColor: "white",
           borderRadius: "15px",
         }}
@@ -42,7 +42,12 @@ const Review: React.FC<ReviewInterface> = ({ cart }) => {
         >
           <Typography sx={{ display: "flex", alignItems: "center" }}>
             <LocalShippingIcon
-              sx={{ color: "#464646", marginRight: "8px", marginTop: "0" }}
+              sx={{
+                color: "#464646",
+                marginRight: "8px",
+                marginTop: "0",
+                display: { xs: "none", md: "block" },
+              }}
             />
             Envío Estándar
           </Typography>
@@ -54,7 +59,12 @@ const Review: React.FC<ReviewInterface> = ({ cart }) => {
         >
           <Typography sx={{ display: "flex", alignItems: "center" }}>
             <HomeIcon
-              sx={{ color: "#464646", marginRight: "8px", marginTop: "0" }}
+              sx={{
+                color: "#464646",
+                marginRight: "8px",
+                marginTop: "0",
+                display: { xs: "none", md: "block" },
+              }}
             />
             Simon bolivar 3127
           </Typography>
@@ -67,7 +77,12 @@ const Review: React.FC<ReviewInterface> = ({ cart }) => {
         >
           <Typography sx={{ display: "flex", alignItems: "center" }}>
             <DiscountIcon
-              sx={{ color: "#464646", marginRight: "8px", marginTop: "0" }}
+              sx={{
+                color: "#464646",
+                marginRight: "8px",
+                marginTop: "0",
+                display: { xs: "none", md: "block" },
+              }}
             />
             Codigo Descuento
           </Typography>
@@ -77,7 +92,7 @@ const Review: React.FC<ReviewInterface> = ({ cart }) => {
       <Box
         sx={{
           marginTop: "20px",
-          padding: "40px",
+          padding: { xs: "10px", md: "40px" },
           backgroundColor: "white",
           borderRadius: "15px",
         }}
@@ -114,8 +129,10 @@ const Review: React.FC<ReviewInterface> = ({ cart }) => {
           <Typography>Total</Typography>
           <Typography>{formatNumberWithCommas(price)}</Typography>
         </Box>
-        Incluye tarifa de verificación. Precio final calculado al finalizar la
-        compra
+        <Typography sx={{ fontSize: "12px", color: "#464646" }}>
+          Incluye tarifa de verificación. Precio final calculado al finalizar la
+          compra
+        </Typography>
       </Box>
     </>
   );

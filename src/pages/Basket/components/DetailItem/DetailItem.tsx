@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { Box, Button, CardMedia, Typography } from "@mui/material";
-
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import MinimizeIcon from "@mui/icons-material/Minimize";
 import AddIcon from "@mui/icons-material/Add";
@@ -16,9 +14,10 @@ import { LocalstorageTypes } from "../../../../models/localstorage";
 
 export interface DetailsItemInterface {
   product: Product;
+  itemKey: number;
 }
 
-const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
+const DetailsItem: React.FC<DetailsItemInterface> = ({ product, itemKey }) => {
   const dispatch = useDispatch();
   const stateCart = useSelector((store: AppStore) => store.cart);
 
@@ -39,9 +38,11 @@ const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
             display: "flex",
             paddingBottom: "10px",
             backgroundColor: "white",
-            alignItems: "right",
-            justifyContent: "flex-start", // Center horizontally
+            justifyContent: "flex-start",
+            flexDirection: { xs: "column", md: "row" },
             width: { xs: "100%", md: "60%" },
+            alignItems: "center",
+            borderTop: itemKey > 0 ? "1px solid #F4F3F1" : undefined,
           }}
         >
           <Box
@@ -57,7 +58,13 @@ const DetailsItem: React.FC<DetailsItemInterface> = ({ product }) => {
             />
           </Box>
 
-          <Box sx={{ padding: "20px", width: "50%" }}>
+          <Box
+            sx={{
+              padding: { xs: "auto", sm: "20px" },
+              width: { xs: "auto", sm: "50%" },
+              justifyContent: "space-evenly",
+            }}
+          >
             <Typography sx={{ padding: "5px", fontSize: "1.25rem" }}>
               {product.title}
             </Typography>

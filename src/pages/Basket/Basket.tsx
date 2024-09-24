@@ -20,7 +20,7 @@ const Basket: React.FC<BasketInterface> = () => {
           height: "auto", // Full screen height
           justifyContent: "center", // Centers the two columns horizontally
           backgroundColor: "#F4F3F1",
-          paddingTop: { xs: "20%", md: "7%" },
+          paddingTop: { xs: "15vh", md: "20vh" },
           flexDirection: { xs: "column", md: "row" },
           paddingBottom: "5%",
         }}
@@ -57,7 +57,7 @@ const Basket: React.FC<BasketInterface> = () => {
           </Box>
           {stateCart != undefined &&
             stateCart.map((item, key) => (
-              <DetailsItem product={item} key={key} />
+              <DetailsItem product={item} key={key} itemKey={key} />
             ))}
         </Box>
 

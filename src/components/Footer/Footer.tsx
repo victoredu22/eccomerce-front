@@ -56,13 +56,15 @@ const Footer: React.FC<FooterInterface> = () => {
           color: "#FFF8F8",
         }}
       >
-        <Box sx={{ textAlign: "left" }}>
-          <Typography>
+        <Box sx={{ textAlign: "left", fontSize: "10px" }}>
+          <Typography sx={{ fontSize: "13px" }}>
             2022. Carrito Compras. Todos los derechos reservados
           </Typography>
         </Box>
         <Box sx={{ textAlign: "right" }}>
-          <Typography>Termino y condicionesAviso de privacidad</Typography>
+          <Typography sx={{ fontSize: "13px" }}>
+            Termino y condicionesAviso de privacidad
+          </Typography>
         </Box>
       </Box>
     </>

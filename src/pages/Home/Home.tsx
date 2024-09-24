@@ -36,6 +36,7 @@ const Home: React.FC<HomeInterface> = () => {
             display: "flex",
             justifyContent: "center",
             alignContent: "center",
+            marginTop: { xs: "10vh", sm: "15vh", md: "1%" },
           }}
         >
           <Box>
